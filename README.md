@@ -1,2 +1,2 @@
 # EclipseScript
-A little programming language that is W.I.P
+A little programming language that is W.I.Pz
