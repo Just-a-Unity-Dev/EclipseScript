@@ -1,13 +1,15 @@
 const gelex = require('gelex');
 const ldef = gelex.definition();
- 
-ldef.define('integer', '[0123456789][0123456789]*');
-ldef.define('name', '[a-zA-Z_][a-zA-Z0-9_]*');
-ldef.define('delimiter', [ '{', '}', ',', ';', '(' , ')']);
-ldef.define('operator', [ '+', '-', '*', '/', '==', '===', '**', '^', '!', '|', '||', '&', '&&' ]);
-ldef.defineText('string', "'", "'");
- 
 
+//Types
+ldef.define('integer', '[0123456789][0123456789]*');
+ldef.defineText('string', '"', '"');
+ldef.define('name', '[a-zA-Z_][a-zA-Z]*');
+
+// Other
+ldef.define('delimiter', [ '{', '}', ',', ';', '(' , ')']);
+ldef.define('operator', [ '+', '-', '*', '/', '==', '===', '**', '^', '!', '|', '||', '&', '&&','<=', '<', '>=', '> ']);
+ldef.define('assignable', ['=', ':'])
 
 module.exports = {
     lex: function lex(lexerize){
