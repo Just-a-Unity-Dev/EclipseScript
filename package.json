@@ -1,0 +1,20 @@
+{
+  "name": "eclipsescript",
+  "version": "1.0.0",
+  "description": "EclipseScript, a scripting language",
+  "main": "interpreter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "repl": "./repl.js"
+  },
+  "keywords": [
+    "script"
+  ],
+  "author": "Eclipse",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "fs": "*",
+    "gelex": "^0.0.7",
+    "readline": "^1.3.0"
+  }
+}
