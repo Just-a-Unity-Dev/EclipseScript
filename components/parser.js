@@ -1,6 +1,9 @@
 const geast = require('geast');
 const gepars = require('gepars')
 
+
+geast.node('print', [ 'expression' ]);
+
 const pdef = gepars.definition();
 
 pdef.define('program', 'commandlist', function (value) { return geast.sequence(value); });
@@ -33,9 +36,3 @@ pdef.define('term', 'integer:', function (value) { return geast.constant(parseIn
 pdef.define('term', 'string:', function (value) { return geast.constant(value); });
 pdef.define('term', 'name:', function (value) { return geast.name(value); });
 pdef.define('term', [ 'delimiter:(', 'expression', 'delimiter:)' ], function (values) { return values[1]; });
-
-module.exports = {
-    parse: function parse(toParse){
-        pdef.parser(toParse)
-    }
-}
