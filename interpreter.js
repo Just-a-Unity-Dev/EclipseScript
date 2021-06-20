@@ -17,6 +17,8 @@ ldef.define('operator', '=== == <= < > =>'.split(' '));
 ldef.define('delimiter', '();,'.split(''));
 ldef.defineText('string', '"', '"');
 
+geast.node('print', [ 'expression' ]);
+
 const pdef = gepars.definition();
 
 pdef.define('program', 'commandlist', function (value) { return geast.sequence(value); });
